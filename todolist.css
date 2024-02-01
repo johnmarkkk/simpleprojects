@@ -10,7 +10,6 @@ body{
     justify-content: center;
     margin-top: 50px;
     width: 100%;
-    height: 100vh;
     background: linear-gradient(to bottom, #030637, #7a5f4a);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -46,14 +45,27 @@ div.first-part button, div.love button{
     height: 30px;
 }
 
-div.first-part input{
-   padding-left: 5px;
-   flex: 1;
-   height: 30px;
+div.love button{
+    background-color: rgba(255, 0, 0, 0.61);
 }
 
 div.first-part input{
-   width: 0;
+   padding-left: 5px;
+   height: 30px;
+   flex-basis: 100px;
+}
+
+div.first-part input.one{
+   flex-grow: 1;
+   max-width: 100%;      
+}
+
+div.first-part input.two{
+    flex-grow: 1;
+}
+
+div.first-part button{
+    flex-grow: 1;
 }
 
 div.second-part{
@@ -68,13 +80,26 @@ div.love{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
-    padding-left: 5px;
-    min-height: 30px;
+    padding: 5px;
     margin-bottom: 2px;
     background-color: #720455;
+    flex-wrap: wrap;
 }
 
-div.love button{
-    height: 100%;
+div.love button:hover{
+    background-color: rgba(255, 0, 0, 0.282);
 }
+
+
+@media screen and (max-width: 600px) {
+    div.love p{
+        flex-basis: 50%;
+    }
+    
+    div.love button{
+        flex-basis: 100%;
+        margin-right: 5px;
+        
+    }
+    
+  }
